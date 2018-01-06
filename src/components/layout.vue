@@ -41,6 +41,7 @@
     overflow: hidden;
     background: #f5f7f9;
     border-radius: 4px;
+    padding-bottom: 60px;
   }
 
   .layout-copy{
@@ -127,8 +128,7 @@
     data() {
       return {
         msg: 'aaa',
-        // activeVar:JSON.stringify(this.$route.params) === '{}'?1:this.$route.params.active
-        activeVar:'1'
+        activeVar:JSON.stringify(this.$route.params) === '{}'?1:this.$route.params.active
       }
     },
     methods:{

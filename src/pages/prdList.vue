@@ -62,6 +62,64 @@
               titleEn:'More love awaits you',
               iconTag:'ios-infinite',
               picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/other/bigPrd/bigPrd.jpg?x-oss-process=style/cq'
+            },
+            {
+              id:'group1',
+              title:'手镯/手链',
+              titleEn:'Just love you',
+              iconTag:'android-radio-button-off',
+              picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/bracelet/%E6%89%8B%E9%93%BE2.jpg?x-oss-process=style/cq'
+
+            },
+            {
+              id:'group2',
+              title:'玉牌',
+              titleEn:'Culture、Connotation',
+              iconTag:'social-vimeo',
+              picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/JadeBrand/%E7%89%8C1.jpg?x-oss-process=style/cq'
+            },
+            {
+              id:'group3',
+              title:'项链/吊坠',
+              titleEn:'Love you to my heart',
+              iconTag:'ios-infinite',
+              picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/necklace/%E4%BD%9B6.jpg?x-oss-process=style/cq'
+            },
+            {
+              id:'group4',
+              title:'其他',
+              titleEn:'More love awaits you',
+              iconTag:'ios-infinite',
+              picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/other/bigPrd/bigPrd.jpg?x-oss-process=style/cq'
+            },
+            {
+              id:'group1',
+              title:'手镯/手链',
+              titleEn:'Just love you',
+              iconTag:'android-radio-button-off',
+              picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/bracelet/%E6%89%8B%E9%93%BE2.jpg?x-oss-process=style/cq'
+
+            },
+            {
+              id:'group2',
+              title:'玉牌',
+              titleEn:'Culture、Connotation',
+              iconTag:'social-vimeo',
+              picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/JadeBrand/%E7%89%8C1.jpg?x-oss-process=style/cq'
+            },
+            {
+              id:'group3',
+              title:'项链/吊坠',
+              titleEn:'Love you to my heart',
+              iconTag:'ios-infinite',
+              picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/necklace/%E4%BD%9B6.jpg?x-oss-process=style/cq'
+            },
+            {
+              id:'group4',
+              title:'其他',
+              titleEn:'More love awaits you',
+              iconTag:'ios-infinite',
+              picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/other/bigPrd/bigPrd.jpg?x-oss-process=style/cq'
             }
           ]
         }
