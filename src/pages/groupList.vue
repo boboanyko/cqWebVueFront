@@ -1,8 +1,8 @@
 <template>
-    <Row :gutter="16" class-name="rowCssF">
-      <Col span="12" class-name="colCss" v-for="group in groupList" :key="group.id">
+    <Row :gutter="16" class-name="rowCssF" type="flex"  justify="center" align="middle">
+      <Col span="8" class-name="colCss" v-for="group in groupList" :key="group.id">
       <div>
-        <Card style="height: 390px">
+        <Card style="height: 490px;">
           <p slot="title">
             <Icon :type="group.iconTag"></Icon>
             {{group.title}}
@@ -52,6 +52,20 @@
               titleEn:'More love awaits you',
               iconTag:'ios-infinite',
               picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/other/bigPrd/bigPrd.jpg?x-oss-process=style/cq'
+            },
+            {
+              id:'group4',
+              title:'其他',
+              titleEn:'More love awaits you',
+              iconTag:'ios-infinite',
+              picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/other/bigPrd/bigPrd.jpg?x-oss-process=style/cq'
+            },
+            {
+              id:'group4',
+              title:'其他',
+              titleEn:'More love awaits you',
+              iconTag:'ios-infinite',
+              picPath:'http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/other/bigPrd/bigPrd.jpg?x-oss-process=style/cq'
             }
           ]
         }
@@ -66,18 +80,21 @@
 
 <style scoped>
   .rowCssF{
-    height: 400px;
+    /*height: 500px; */
+    width: 100%;
   }
   .colCss{
     margin: 16px 0 0;
     /*max-width: 430px;*/
+    min-width: 321px;
   }
 
   .grouppic{
-    height: 310px;
+    /*width: 90%;*/
     /*border: 1px solid #363e4f;*/
     box-shadow: 0 0 7px #000;
     cursor: pointer;
+    height: 400px;
   }
 
   .grouppic img{

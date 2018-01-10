@@ -2,46 +2,45 @@
   <div class="productDiv">
     <Row type="flex"  justify="center" align="middle" >
       <Col span="14" class="productCol allWidth">
-        <div>
-          <div class="prductHeadPicDiv">
-            <img id="prductHeadPicImg" src="http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/bracelet/%E6%89%8B%E9%93%BE2.jpg?x-oss-process=style/cq"/>
-          </div>
-
-          <Row type="flex"  justify="center" align="middle" class="gallery">
-
-            <Col span="4" @mouseover.native="choosePic('gallery1')"><img id="gallery1" src="http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/bracelet/%E6%89%8B%E9%93%BE2.jpg?x-oss-process=style/cq"></Col>
-            <Col span="4" @mouseover.native="choosePic('gallery2')"><img id="gallery2" src="http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/necklace/%E4%BD%9B6.jpg?x-oss-process=style/cq"></Col>
-            <Col span="4"><img src="http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/bracelet/%E6%89%8B%E9%93%BE2.jpg?x-oss-process=style/cq"></Col>
-            <Col span="4"><img src="http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/bracelet/%E6%89%8B%E9%93%BE2.jpg?x-oss-process=style/cq"></Col>
-            <Col span="4"><img src="http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/bracelet/%E6%89%8B%E9%93%BE2.jpg?x-oss-process=style/cq"></Col>
-            <Col span="4"><img src="http://ce-res.oss-cn-shanghai.aliyuncs.com/group/pic/bracelet/%E6%89%8B%E9%93%BE2.jpg?x-oss-process=style/cq"></Col>
-          </Row>
+      <div>
+        <div class="prductHeadPicDiv">
+          <img :id="cqPrd.id" :src="cqPrd.prdHeadPicPath">
         </div>
+
+        <Row  class="gallery">
+          <Col span="4" @mouseover.native="choosePic(cqPrd.id)">
+            <img :id="cqPrd.id" :src="cqPrd.prdHeadPicPath">
+          </Col>
+          <Col span="4" v-for="prdPic in picList" @mouseover.native="choosePic(prdPic.id)" :key="prdPic.id">
+            <img :id="prdPic.id" :src="prdPic.prdPicPath">
+          </Col>
+        </Row>
+      </div>
 
       </Col>
       <br/>
       <Col span="14" class="productDesc allWidth">
       <span class="recommend">海洋灵玉</span>
-        <span class="recommend">店长推荐</span>
-        <span class="recommend">精品</span>
-        <span class="productDescSpan">来自海南有名的谭门镇 大师雕刻 南沙玉化砗磲 白砗磲 10mm奶白手链 100g 精品</span>
+      <span class="recommend">店长推荐</span>
+      <span class="recommend">精品</span>
+      <span class="productDescSpan">{{cqPrd.prdDesc}}</span>
       </Col>
       <br/>
       <Col span="14" class="priceCol allWidth">
-        <span class="priceNew">￥3000.00</span>
-        <span class="priceOrg">￥4000.00</span>
+      <span class="priceNew">￥{{cqPrd.prdPrice}}.00</span>
+      <span class="priceOrg">￥{{cqPrd.prdPrice * 1.2}}.00</span>
       </Col>
       <!--<Col span="14">-->
       <!--col-6-->
       <!--</Col>-->
 
       <Col span="14" class="toQcode allWidth">
-        <span>
+      <span>
           客官如看上小灵的产品~，可速速快马加鞭联系微信，点击页面底部，可找到本灵的微信二维码，扫码添加，优惠多多哦~
         </span>
       </Col>
       <Col span="14" class="qcodeCol allWidth">
-        <img src="http://ce-res.oss-cn-shanghai.aliyuncs.com/group/common/qcode/boboanyko.png?x-oss-process=style/cq"/>
+      <img src="http://ce-res.oss-cn-shanghai.aliyuncs.com/group/common/qcode/boboanyko.png?x-oss-process=style/cq"/>
       </Col>
     </Row>
   </div>
@@ -51,7 +50,8 @@
   export default {
     data(){
       return {
-        data1:'111'
+        picList:[],
+        cqPrd:{}
       }
     },
     methods:{
@@ -59,7 +59,25 @@
         let tmpPic = document.getElementById(picId).getAttribute('src');
         console.log(tmpPic);
         document.getElementById('prductHeadPicImg').setAttribute('src',tmpPic);
+      },
+      getPrdPicList:function (prdId) {
+        this.$ajax.get('http://localhost:8080/prd/getPrdPicList.do?prdId='+prdId).then(response =>{
+          console.log(response);
+          console.log(prdId)
+          if(response.data.result === 'SUCCESS'){
+            this.picList = response.data.picList;
+            this.cqPrd = response.data.cqPrd;
+            console.log(this.picList);
+          }else{
+            console.error(response.reason);
+          }
+        },response =>{
+          console.error("获取数据失败！")
+        })
       }
+    },
+    created(){
+      this.getPrdPicList(this.$route.params.productId);
     }
   }
 </script>

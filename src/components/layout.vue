@@ -88,7 +88,7 @@
           <Icon type="home"></Icon>
           主页
         </MenuItem>
-        <MenuItem name="2" @click.native="toGroupList('/groupList/2')">
+        <MenuItem name="2" @click.native="toGroupList('/prdList/2/group')">
           <Icon type="heart"></Icon>
           结缘堂
         </MenuItem>
@@ -142,8 +142,8 @@
 
     },
     mounted () {
-      console.log(JSON.stringify(this.$route.params) === '{}');
-      console.log(this.$data.activeVar);
+      // console.log(JSON.stringify(this.$route.params) === '{}');
+      // console.log(this.$data.activeVar);
       // this.activeVar = this.$route.params.active;
     }
   }

@@ -6,9 +6,13 @@ import 'iview/dist/styles/iview.css'
 import  VueRouter from 'vue-router'
 import GroupList from './pages/groupList'
 import PrdList from './pages/prdList'
+import PrdDetail from './pages/productDetail'
+import axios from 'axios'
 
 Vue.use(iView)
 Vue.use(VueRouter)
+Vue.prototype.$ajax = axios
+// Vue.prototype.$http = axios
 
 let router = new VueRouter({
   mode:'history',
@@ -28,6 +32,10 @@ let router = new VueRouter({
     {
       path:'/prdList/:active/:groupId/',
       component:PrdList
+    },
+    {
+      path:'/prdDetail/:active/:productId/',
+      component:PrdDetail
     }
   ]
 })
