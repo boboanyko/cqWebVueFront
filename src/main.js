@@ -7,6 +7,7 @@ import  VueRouter from 'vue-router'
 import GroupList from './pages/groupList'
 import PrdList from './pages/prdList'
 import PrdDetail from './pages/productDetail'
+import PrdVedio from './pages/prdVedio'
 import axios from 'axios'
 
 Vue.use(iView)
@@ -36,6 +37,10 @@ let router = new VueRouter({
     {
       path:'/prdDetail/:active/:productId/',
       component:PrdDetail
+    },
+    {
+      path:'/prdFilm/:active/',
+      component:PrdVedio
     }
   ]
 })
@@ -50,3 +55,4 @@ new Vue({
   template:'<Layout/>',
   components:{ Layout}
 })
+

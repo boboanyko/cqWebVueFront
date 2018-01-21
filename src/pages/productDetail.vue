@@ -4,7 +4,7 @@
       <Col span="14" class="productCol allWidth">
       <div>
         <div class="prductHeadPicDiv">
-          <img :id="cqPrd.id" :src="cqPrd.prdHeadPicPath">
+          <img id="prductHeadPicImg" :src="cqPrd.prdHeadPicPath">
         </div>
 
         <Row  class="gallery">
@@ -61,7 +61,7 @@
         document.getElementById('prductHeadPicImg').setAttribute('src',tmpPic);
       },
       getPrdPicList:function (prdId) {
-        this.$ajax.get('http://localhost:8080/prd/getPrdPicList.do?prdId='+prdId).then(response =>{
+        this.$ajax.get('http://116.196.94.79:8080/cqWebVue/prd/getPrdPicList.do?prdId='+prdId).then(response =>{
           console.log(response);
           console.log(prdId)
           if(response.data.result === 'SUCCESS'){

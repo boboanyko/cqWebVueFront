@@ -19,7 +19,7 @@
             </div>
             <div class="prddesc">
               <Icon type="heart" color="#e23a3a"></Icon>
-              <span>好评率：</span><span>{{prd.prdRate}}</span>
+              <span>好评率：</span><span>{{prd.prdRate}}%</span>
             </div>
           </Card>
 
@@ -42,7 +42,7 @@
           window.location.href='/prdDetail/2/'+ id +'/'
         },
         getPrdList:function () {
-          this.$ajax.get('http://localhost:8080/prd/getPrdList').then(response =>{
+          this.$ajax.get('http://116.196.94.79:8080/cqWebVue/prd/getPrdList').then(response =>{
             console.log(response);
 
             if(response.data.result === 'SUCCESS'){

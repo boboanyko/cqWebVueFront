@@ -20,7 +20,7 @@
 
   .layout-title{
     position: absolute;
-    top: 15px;
+    top: 5px;
     left:100px;
     /*line-height: 60px;*/
     color:white;
@@ -31,7 +31,8 @@
   }
   .layout-nav{
     width: 420px;
-    margin: 0 auto;
+    margin: -6px 40%;
+    display: inline-block;
   }
 
   .layout-content{
@@ -56,7 +57,7 @@
   }
 
   .headerHeight{
-    height:80px;
+    /*height:80px;*/
     padding-top: 10px;
     padding-bottom: 10px;
     position: fixed;
@@ -92,7 +93,7 @@
           <Icon type="heart"></Icon>
           结缘堂
         </MenuItem>
-        <MenuItem name="3">
+        <MenuItem name="3" @click.native="toGroupList('/prdFilm/3/')">
           <Icon type="videocamera"></Icon>
           加工影像
         </MenuItem>
